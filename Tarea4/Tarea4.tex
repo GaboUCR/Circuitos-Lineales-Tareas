@@ -74,16 +74,19 @@ $I(R45) = \frac{v14-v26}{R1} = 11.31m A$\\
 $I(R46) = \frac{v28-v14}{R3} = 11.225m A$\\ 
 \includegraphics[]{images/MicroCap5_67.PNG}\\ \\
 $I(R47) = \frac{v11-v14}{R2} = 84.918u A$\\ 
-\section{Ejercicio 2}
-Se utiliza el programa Ltspice, note que las tensiones de nodos están nombradas de la misma forma que en el circuito diseñado en Micro Cap, los resistores no tienen la misma numeración.\\ \\
+\section{Ejercicio 2 y 4}
+Se utiliza el programa Ltspice, note que las tensiones de nodos están nombradas de la misma forma que en el circuito diseñado en Micro Cap, los resistores no tienen la misma numeración. Se mostrarán los datos tabulados y luego las imágenes del circuito.\\ \\
 Los valores de las tensiones de nodo son:\\ 
 \includegraphics[]{images/ltspicetensiones.PNG}\\ \\
+Los valores de las corrientes de rama son: \\ \\
+\includegraphics[]{images/ramas1.PNG}\\ \\
+\includegraphics[]{images/ramas2.PNG}\\ \\
 Puede encontrar donde se encuentran estos valores en las siguientes capturas.\\
 \includegraphics[]{images/ltspice1_75.PNG}\\ \\
 \includegraphics[]{images/ltspice2_75.PNG}\\ \\
 \includegraphics[]{images/ltspice3_70.PNG}\\ \\
 \section{Ejercicio 3}
-Se utiliza el siguiente archivo SPICE.\\
+Se utiliza el siguiente archivo SPICE, creado del código SPICE del circuito de Micro Cap.\\
 Ejercicio 3\\
 E1 21 9 14 11 2\\
 F1 4 6 VF1 1.2\\
@@ -155,4 +158,65 @@ Se utiliza el comando "source two.cir" para cargar el circuito, una vez cargado 
 \includegraphics[]{images/ngspice1_70.PNG}\\ \\
 $e+x$ representa un factor de $10^x$ \\  
 \includegraphics[]{images/ngspice2.PNG}\\ \\
+El código fuente SPICE de Ltspice es:\\ \\ 
+R16 v9 v5 10000\\
+R17 v11 v5 30000\\
+R18 v10 v5 10000\\
+R19 v15 v10 20000\\
+R20 v17 v10 20000\\
+H1 v15 v17 ix 6\\
+R21 v19 v17 30000\\
+R22 v15 v13 30000\\
+R23 v12 v11 10000\\
+F2 v12 v13 vx 2000\\
+R24 v16 v13 10000\\
+R25 v12 v11 30000\\
+vx N003 v11 0\\
+R26 N002 N003 20000\\
+R27 v28 N002 30000\\
+R28 v26 N002 10000\\
+R29 v27 v28 10000\\
+R30 v24 v26 30000\\
+R31 v27 v12 20000\\
+R32 v25 v27 10000\\
+R33 v24 v25 20000\\
+R34 v23 v25 10000\\
+R35 v22 v24 30000\\
+R36 v22 v23 20000\\
+R37 v23 v16 20000\\
+R38 v22 v23 30000\\
+I1 v16 v23 0.5\\
+R39 v8 v22 10000\\
+R40 v8 N001 20000\\
+V§ix v16 N001 0\\
+R41 v8 v16 30000\\
+R42 v8 v16 10000\\
+R43 v2 v16 20000\\
+R44 v2 v9 30000\\
+R45 v8 v2 20000\\
+R46 v2 v9 20000\\
+R47 v2 v9 10000\\
+R48 v4 v2 30000\\
+R49 0 v2 30000\\
+R1 v4 v1 10000\\
+R2 v1 0 30000\\
+R3 v4 v1 20000\\
+R4 v4 v3 10000\\
+R5 v9 v4 20000\\
+F1 v4 v6 ix 1.2\\
+R6 v4 v6 10000\\
+R7 v6 v5 30000\\
+R8 v5 v3 20000\\
+R9 v3 0 10000\\
+R10 v5 v3 20000\\
+H2 v21 v9 vx 40000\\
+R11 v20 v21 10000\\
+V3 v16 v20 20\\
+R12 v20 v19 20000\\
+R13 v16 v19 10000\\
+.op\\
+.backanno\\
+.end\\
+
+
 \end{document}
